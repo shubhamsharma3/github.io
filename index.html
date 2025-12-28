@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Shubham Sharma — Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+<style>
+:root{
+  --bg:#edf2ee;
+  --primary:#0b3a2a;
+  --text:#141414;
+  --muted:#5b6b63;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+
+body{
+  font-family:'Inter',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+
+/* NAV */
+nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:22px 56px;
+}
+
+.logo{
+  font-weight:700;
+  color:var(--primary);
+  line-height:1.1;
+}
+
+.actions{
+  display:flex;
+  gap:28px;
+  align-items:center;
+}
+
+.actions a{
+  text-decoration:none;
+  color:var(--text);
+  font-weight:500;
+}
+
+.btn{
+  background:var(--primary);
+  color:#fff;
+  padding:9px 18px;
+  border-radius:9px;
+  font-size:14px;
+}
+
+/* HERO */
+.hero{
+  display:grid;
+  grid-template-columns:1.1fr 0.9fr;
+  align-items:center;
+  gap:72px;
+  padding:56px 56px 110px;
+}
+
+.hero-left small{
+  color:var(--muted);
+  font-size:15px;
+}
+
+.hero-left h1{
+  font-size:64px;
+  line-height:1.07;
+  margin:20px 0;
+  color:var(--primary);
+}
+
+.hero-left p{
+  font-size:17px;
+  max-width:460px;
+  color:#2e3d36;
+}
+
+.hero-left a{
+  display:inline-block;
+  margin-top:22px;
+  color:var(--primary);
+  font-weight:600;
+  text-decoration:none;
+}
+
+/* RIGHT */
+.hero-right{
+  position:relative;
+}
+
+/* SHAPES */
+.shape{
+  position:absolute;
+  width:260px;
+  height:110px;
+  background:#0b3a2a;
+  border-radius:120px;
+  opacity:.95;
+}
+
+.shape.one{
+  top:24px;
+  left:48px;
+  transform:rotate(30deg);
+}
+
+.shape.two{
+  bottom:18px;
+  right:8px;
+  transform:rotate(-16deg);
+}
+
+/* IMAGE */
+.hero-image{
+  position:relative;
+  z-index:2;
+  display:flex;
+  justify-content:center;
+}
+
+.hero-image img{
+  width:100%;
+  max-width:330px;
+  border-radius:14px;
+  transform:translateY(8px); /* subtle face alignment */
+}
+
+/* METRICS */
+.metric{
+  position:absolute;
+  font-size:13px;
+  color:var(--primary);
+}
+
+.metric.left{
+  left:-110px;
+  bottom:44%;
+}
+
+.metric.right{
+  right:-120px;
+  bottom:38%;
+}
+
+.metric strong{
+  display:block;
+  font-size:19px;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="logo">Shubham<br/>Sharma.</div>
+  <div class="actions">
+    <a href="#">About</a>
+    <a href="#">My Works</a>
+    <a href="#" class="btn">Book Now</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-left">
+    <small>Hey there,</small>
+    <h1>
+      I’m Shubham<br/>
+      Sharma
+    </h1>
+    <p>
+      Product and AI leader building scalable data platforms
+      and intelligent systems for enterprise and government.
+    </p>
+    <a href="#">Let’s collaborate →</a>
+  </div>
+
+  <div class="hero-right">
+    <div class="shape one"></div>
+    <div class="shape two"></div>
+
+    <div class="metric left">
+      <strong>10+</strong>
+      Years Experience
+    </div>
+
+    <div class="metric right">
+      <strong>100+</strong>
+      Clients & Programs
+    </div>
+
+    <div class="hero-image">
+      <img src="shubham.jpg" alt="Shubham Sharma">
+    </div>
+  </div>
+</section>
+
+<script>
+gsap.from(".hero-left > *",{
+  y:28,
+  opacity:0,
+  stagger:0.14,
+  duration:0.9,
+  ease:"power3.out"
+});
+
+gsap.from(".hero-image",{
+  scale:0.95,
+  opacity:0,
+  duration:0.9,
+  delay:0.35,
+  ease:"power3.out"
+});
+
+gsap.from(".shape",{
+  scale:0,
+  opacity:0,
+  stagger:0.18,
+  duration:0.7,
+  delay:0.55,
+  ease:"back.out(1.5)"
+});
+</script>
+
+</body>
+</html>
